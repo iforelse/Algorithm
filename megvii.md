@@ -61,4 +61,27 @@
           p0.next = pre
           return dummy.next
   ```
-  - 拓展：[K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/)
+  - 拓展：[K 个一组翻转链表](https://leetcode.cn/problems/lru-cache/description/)
+### 02 LRU缓存机制 <https://leetcode.cn/problems/reverse-linked-list-ii> 【未写】
+- 方法0：直接用python的collections.OrderedDict类
+- 方法1：哈希表+双向链表（dict+含pre和nxt的类）
+### 03 对角线遍历 <https://leetcode.cn/problems/diagonal-traverse/description/> 【只看了思路】
+- 思路：按对角线条数索引：
+  - ↗的：找到起始点，按顺序遍历
+  - ↙的：找到其实点，按顺序遍历
+
+### 04 [环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
+- 简单思路：遍历，将值存入set()，检查cur是否在set中。
+'''python
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node_set = set()
+        cur = head
+        while cur:
+            if cur in node_set:
+                return cur
+            else:
+                node_set.add(cur)
+                cur = cur.next
+        return None
+'''
