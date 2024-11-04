@@ -70,9 +70,9 @@
   - ↗的：找到起始点，按顺序遍历
   - ↙的：找到其实点，按顺序遍历
 
-### 04 [环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
+### 04 环形链表 II <https://leetcode.cn/problems/linked-list-cycle-ii/description/>
 - 简单思路：遍历，将值存入set()，检查cur是否在set中。
-'''python
+```python
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         node_set = set()
@@ -84,4 +84,40 @@ class Solution:
                 node_set.add(cur)
                 cur = cur.next
         return None
-'''
+```
+
+
+
+
+### 99 环形数组中的第K个最大元素 <https://leetcode.cn/problems/kth-largest-element-in-an-array/description/>
+- 方法：快速选择（基于快排原理）
+- 思路：
+  - 随机选择基准pivot
+  - 将nums分到子列表big,equal,small
+  - 根据k与len(子列表)的关系，递归或得到结果。
+```python
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        def quick_select(nums, k):
+            # 随机选一个基准数
+            pivot = random.choice(nums)
+            big, equal, small = [], [], []
+            for num in nums:
+                if num > pivot:
+                    big.append(num)
+                elif num < pivot:
+                    small.append(num)
+                else:
+                    equal.append(num)
+            # 第k大在big中，递归划分
+            if k <= len(big):
+                return quick_select(big, k)
+            # k在small中(k>=small的起始位置)
+            if k > len(nums) - len(small):
+                # 找small中的第k-xx大
+                return quick_select(small, k - (len(nums) - len(small)))
+            # k在equal中
+            return pivot
+            
+        return quick_select(nums, k)
+```
