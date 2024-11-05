@@ -144,3 +144,15 @@ class Solution:
             
         return quick_select(nums, k)
 ```
+
+
+### 198打家劫舍
+- 动态规划==》回溯
+- 代码：简单实现==》catch数组缓存结果，节省计算
+  - ![image](https://github.com/user-attachments/assets/912a6527-6823-4f57-96e9-8d4ecbed8278)
+
+
+
+
+## 作业？
+迷路的机器人 https://leetcode.cn/problems/robot-in-a-grid-lcci/description/
