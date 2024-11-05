@@ -92,6 +92,10 @@ class Solution:
 
 ### 06 子集 <https://leetcode.cn/problems/subsets/description/>
 - 思路：回溯[https://www.bilibili.com/video/BV1mG4y1A7Gu]!
+  - 回溯三问
+    - 当前操作？
+    - 子问题？
+    - 下一个子问题？
   - ![image](https://github.com/user-attachments/assets/fd169e1a-cef2-4111-b0aa-835088add209)
 
 
