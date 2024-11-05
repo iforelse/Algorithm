@@ -111,6 +111,10 @@ class Solution:
         return s0
 ```
 
+### 002 两数之和 三数之和 <https://leetcode.cn/problems/two-sum/description/> <https://leetcode.cn/problems/3sum/description/>
+- 思路：双指针、剪枝
+- [视频](https://www.bilibili.com/video/BV1bP411c7oJ/)
+
 
 ### 99 环形数组中的第K个最大元素 <https://leetcode.cn/problems/kth-largest-element-in-an-array/description/>
 - 方法：快速选择（基于快排原理）
