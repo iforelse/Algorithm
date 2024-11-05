@@ -86,7 +86,30 @@ class Solution:
         return None
 ```
 
+### 05 全排列 <https://leetcode.cn/problems/permutations/description/>
+- 思路：回溯[https://www.bilibili.com/video/BV1mY411D7f6]!
+  - [image](https://github.com/user-attachments/assets/aa40c330-ba55-4bca-8afe-07e5f6c9ccc8)
 
+### 06 子集 <https://leetcode.cn/problems/subsets/description/>
+- 思路：回溯[https://www.bilibili.com/video/BV1mG4y1A7Gu]!
+  - ![image](https://github.com/user-attachments/assets/fd169e1a-cef2-4111-b0aa-835088add209)
+
+
+### 001 最长公共前缀 <https://leetcode.cn/problems/longest-common-prefix/description/>
+- 暴力做法最简单
+- 复杂度分析
+  - 时间复杂度：O(mn)，其中 m 为 strs 的长度，n 为 strs 中最短字符串的长度。
+  - 空间复杂度：O(1)。返回值不计入。
+```python
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        s0 = strs[0]
+        for j, c in enumerate(s0):
+            for s in strs:
+                if j == len(s) or c != s[j]:
+                    return s0[:j]
+        return s0
+```
 
 
 ### 99 环形数组中的第K个最大元素 <https://leetcode.cn/problems/kth-largest-element-in-an-array/description/>
