@@ -72,8 +72,10 @@
 
 ### 04 环形链表 II <https://leetcode.cn/problems/linked-list-cycle-ii/description/>
 - 简单思路：遍历，将值存入set()，检查cur是否在set中。
+- 正常思路：快慢指针
+  - 快慢指针相遇时，slow和head同时走，最终会在入口相遇（简单推导可得）
 ```python
-class Solution:
+class Solution:  # 简单方法
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         node_set = set()
         cur = head
