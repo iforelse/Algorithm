@@ -62,7 +62,7 @@
           return dummy.next
   ```
   - 拓展：[K 个一组翻转链表](https://leetcode.cn/problems/lru-cache/description/)
-### 02 LRU缓存机制 <https://leetcode.cn/problems/reverse-linked-list-ii> 【未写】
+### 02 LRU缓存机制 <https://leetcode.cn/problems/lru-cache/description/> 【未写】
 - 方法0：直接用python的collections.OrderedDict类
 - 方法1：哈希表+双向链表（dict+含pre和nxt的类）
 ### 03 对角线遍历 <https://leetcode.cn/problems/diagonal-traverse/description/> 【只看了思路】
