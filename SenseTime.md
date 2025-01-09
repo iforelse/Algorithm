@@ -33,4 +33,29 @@ def twoSum(self, numbers: List[int], target: int) -> List[int]:
     return [left + 1, right + 1]
 ```
 
+**300. 最长递增子序列**
+方法：子集型回溯（动态规划）（视频还有更优的 贪心+二分查找）
+```python
+def lengthOfLIS(self, nums: List[int]) -> int:
+    # n = len(nums)
+    # f = [0] * n
+    # for i in range(n):
+    #     for j in range(i):  # 遍历i之前的数
+    #         if nums[j] < nums[i]:
+    #             f[i] = max(f[i], f[j])
+    #     f[i] += 1
+    # return max(f)
+    n = len(nums)
+    @cache
+    def dfs(i):
+        res = 0
+        for j in range(i):
+            if nums[j] < nums[i]:
+                res = max(res, dfs(j))
+        return res + 1
+    return (max([dfs(i) for i in range(n)]))
+```
+
+
+
 
