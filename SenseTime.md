@@ -56,6 +56,8 @@ def lengthOfLIS(self, nums: List[int]) -> int:
     return (max([dfs(i) for i in range(n)]))
 ```
 
+
+**[链表]如果需要删除头节点，就需要虚拟节点dummy node**
 **19. 删除链表的倒数第 N 个结点**
 方法：前后指针
 ```python
@@ -73,5 +75,19 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
     left.next = left.next.next
     return dummy.next
 ```
-
+**82. 删除排序链表中的重复元素 II**
+```python
+def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    dummy = ListNode(next=head)
+    cur = dummy
+    while cur.next and cur.next.next:
+        val = cur.next.val
+        if cur.next.next.val == val:  # 如果存在重复
+            # 此时在val的前一个节点，套循环把值为val的全删除
+            while cur.next and cur.next.val == val:
+                cur.next = cur.next.next
+        else:
+            cur = cur.next
+    return dummy.next
+```
 
