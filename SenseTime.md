@@ -56,6 +56,21 @@ def lengthOfLIS(self, nums: List[int]) -> int:
     return (max([dfs(i) for i in range(n)]))
 ```
 
-
+**19. 删除链表的倒数第 N 个结点**
+方法：前后指针
+```python
+def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    dummy = ListNode(next=head)
+    right = dummy
+    for _ in  range(n):
+        right = right.next
+    left = dummy
+    while right.next:  # right.next is not None
+        left = left.next
+        right = right.next
+    # 此时left指向倒数第N+1个
+    # 删除left.next（倒数第N个结点）
+    left.next = left.next.next
+```
 
 
