@@ -71,6 +71,7 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
     # 此时left指向倒数第N+1个
     # 删除left.next（倒数第N个结点）
     left.next = left.next.next
+    return dummy.next
 ```
 
 
