@@ -91,6 +91,7 @@ def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return dummy.next
 ```
 **62. 不同路径**
+- 方法：动态规划，记忆化搜索
 ```python
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
