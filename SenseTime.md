@@ -91,3 +91,19 @@ def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return dummy.next
 ```
 
+**88. 合并两个有序数组**
+- 方法：双指针，倒序插入
+```python
+def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    # 倒序将nums2填入nums1
+    p1, p2, p = m - 1, n - 1, m + n - 1
+    while p2 >= 0:
+        if p1 >= 0 and nums1[p1] > nums2[p2]:
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:
+            nums1[p] = nums2[p2]
+            p2 -= 1
+        p -= 1  # 下一个填的位置
+```
+
