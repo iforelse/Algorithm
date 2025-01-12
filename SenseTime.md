@@ -1,7 +1,6 @@
 
 **287. 寻找重复数**
 - 方法：二分查找
-- 代码：
 ```python
 def findDuplicate(self, nums: List[int]) -> int:
     min_val = 1  # 最小值
@@ -18,7 +17,7 @@ def findDuplicate(self, nums: List[int]) -> int:
 ```
 
 **167. 两数之和 II - 输入有序数组**
-方法：双指针
+- 方法：双指针
 ```python
 def twoSum(self, numbers: List[int], target: int) -> List[int]:
     left = 0
@@ -35,7 +34,7 @@ def twoSum(self, numbers: List[int], target: int) -> List[int]:
 ```
 
 **300. 最长递增子序列**
-方法：子集型回溯（动态规划）（视频还有更优的 贪心+二分查找）
+- 方法：子集型回溯（动态规划）（视频还有更优的 贪心+二分查找）
 ```python
 def lengthOfLIS(self, nums: List[int]) -> int:
     # n = len(nums)
@@ -60,7 +59,7 @@ def lengthOfLIS(self, nums: List[int]) -> int:
 
 **[链表]如果需要删除头节点，就需要虚拟节点dummy node**
 **19. 删除链表的倒数第 N 个结点**
-方法：前后指针
+- 方法：前后指针
 ```python
 def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
     dummy = ListNode(next=head)
