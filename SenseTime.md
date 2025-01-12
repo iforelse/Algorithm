@@ -146,3 +146,26 @@ class Solution:
             ans = max(ans, f_max)
         return ans
 ```
+
+**20. 有效的括号**
+- 简单题
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2:  # 长度必须偶数
+            return False
+        mp = {')': '(', ']': '[', '}': '{'}
+        st = []
+        for c in s:
+            # 如果c是左括号
+            if c not in mp:
+                st.append(c)  # 入栈
+            # 如果c是右括号
+            # 无左括号(st空)
+            # 或者
+            # 括号不匹配
+            elif not st or st.pop() != mp[c]:
+                return False
+        return not st  # st为空则为True
+```
+
