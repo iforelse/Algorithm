@@ -1,7 +1,7 @@
 
 **287. 寻找重复数**
-
-方法：二分查找
+- 方法：二分查找
+- 代码：
 ```python
 def findDuplicate(self, nums: List[int]) -> int:
     min_val = 1  # 最小值
