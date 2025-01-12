@@ -1,5 +1,6 @@
 
 **287. 寻找重复数**
+
 方法：二分查找
 ```python
 def findDuplicate(self, nums: List[int]) -> int:
