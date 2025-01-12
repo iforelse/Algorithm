@@ -90,6 +90,20 @@ def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
             cur = cur.next
     return dummy.next
 ```
+**62. 不同路径**
+```python
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        @cache
+        def dfs(i,j):
+            if i >= m or j >= n:
+                return 0
+            if i == m-1 and j == n-1:
+                return 1
+            return dfs(i+1,j) + dfs(i,j+1)
+        return dfs(0,0)
+```
+
 
 **88. 合并两个有序数组**
 - 方法：双指针，倒序插入
