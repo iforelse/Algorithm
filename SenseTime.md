@@ -58,6 +58,7 @@ def lengthOfLIS(self, nums: List[int]) -> int:
 
 
 **[链表]如果需要删除头节点，就需要虚拟节点dummy node**
+
 **19. 删除链表的倒数第 N 个结点**
 - 方法：前后指针
 ```python
